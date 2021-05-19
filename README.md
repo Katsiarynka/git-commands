@@ -39,3 +39,10 @@ git checkout mainline
 git cherry-pick e12724…52a0
 ```
 It's a little bit a long way, so I prefer for this purposes:
+```
+git checkout mainline
+git rebase shared
+git reset HEAD~5 // change a cursor on HEAD of git commits, to get all changes unstaged and to make a beatifull commit
+// review all changes with git diff
+git commit -a -m "All changes with a beatiful one commit"
+```
