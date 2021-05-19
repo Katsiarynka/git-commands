@@ -15,34 +15,41 @@ git log --stat
 ```
 Populars to check diff
 ```
-git diff \\ Check changes that was made locally, but not staged
-git diff cached \\  with staged changes
+# Check changes that was made locally, but not staged
+git diff 
+# with staged changes
+git diff cached 
 ```
 finally for getting diff of a commit in a terminal
 ```
-git diff 48942192c9020ad407d354d1dd892db8d4af386f
+git diff 48942..4af386f
 ```
 
 To cache locale changes to get updates, f.e., from mainline:
 ```
 git stash
+# Store current work with untracked files
+$ git stash -u
 ```
 To upload changes in local branch:
 ```
 git stash pop
 ```
-
-Sometimes we share a branch with colleagues and make a lot of commands into not a final branch, and we want to pick some commits from this branch to mainline to make a final one pull request. You can use:
+I hope you make all your changes in mainline with one commit, 
+and sometimes we share a branch with colleagues and to move all our code into a mainline, 
+we need to pick some commits from this shared branch to mainline to make a final one pull request. You can use:
 ```
 git log
 git checkout mainline
 git cherry-pick e12724…52a0
 ```
-It's a little bit a long way, so I prefer for this purposes:
+It's a little bit annoying if you have a lot of commits, so I prefer for this purposes:
 ```
 git checkout mainline
 git rebase shared
-git reset HEAD~5 // change a cursor on HEAD of git commits, to get all changes unstaged and to make a beatifull commit
-// review all changes with git diff
+# change a cursor on HEAD of git commits, to get all changes unstaged and to make a beatifull commit
+git reset HEAD~5 
+# review all changes with git diff and make changes if necessary
 git commit -a -m "All changes with a beatiful one commit"
 ```
+
