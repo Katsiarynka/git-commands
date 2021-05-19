@@ -38,4 +38,4 @@ git log
 git checkout mainline
 git cherry-pick e12724…52a0
 ```
-It's a little bit a long way, so I'm 
+It's a little bit a long way, so I prefer for this purposes:
