@@ -52,4 +52,10 @@ git reset HEAD~5
 # review all changes with git diff and make changes if necessary
 git commit -a -m "All changes with a beatiful one commit"
 ```
+And the final one, how to clean your local changes, rewrite working tree from specified commit
+```
+git reset --hard [commit]
+```
 
+Have a good git experience! 
+Share you ideas what is you favorite git commands.
